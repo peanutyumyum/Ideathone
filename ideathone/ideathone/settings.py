@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'user',
+    'search',
 ]
 
 MIDDLEWARE = [
@@ -57,7 +58,7 @@ ROOT_URLCONF = 'ideathone.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path(BASE_DIR, 'main', 'templates/'), os.path(BASE_DIR, 'user', 'templates/'), os.path(BASE_DIR, 'search', 'templates/')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
