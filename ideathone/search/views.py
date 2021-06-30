@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .models import Item
 from django.db.models import Q
 
-from .forms import RecommendForm
+from .forms import *
 
 # Create your views here.
 
@@ -29,7 +29,11 @@ def search(request):
 def recommend_items(request):
     items = Item.objects.all()
     recommend_forms = RecommendForm()
+    search_forms = SearchForm()
+    search_word = request.GET.get('search_word')
     context = {
-        'recommend_forms' : recommend_forms
+        'recommend_forms' : recommend_forms,
+        'search_forms' : search_forms,
+        'search_word' : search_word,
     }
     return render(request, 'recommend.html', context)
