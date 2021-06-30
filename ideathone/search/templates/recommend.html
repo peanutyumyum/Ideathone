@@ -3,6 +3,15 @@
     <title>Recommend page</title>
     {% endblock %}
     {% block search %}
-    {{recommend_forms}}
-    {{search_forms}}
+    <form id="recommend_items_form" action="{% url 'search:recommend_items' %}" method="GET">
+        {% csrf_token %}
+        {{recommend_forms}}
+        <button type="submit">검색</button>
+    </form>
+    {% if search_items %}
+        {% for item in search_items %}
+            {{item.name}}
+        {% endfor %}
+    {% else %}
+    {% endif %}
     {% endblock %}
