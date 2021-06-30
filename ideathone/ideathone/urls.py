@@ -21,9 +21,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('main.urls', namespace='main')),
-    path('user/', include('user.urls', namespace='user')),
-    path('search/', include('search.urls', namespace='search')),
+    # path('', include('main.urls', namespace='main')),
+    path('', include('user.urls', namespace='user')),
+    # path('search/', include('search.urls', namespace='search')),
 ]
 
 if settings.DEBUG:
