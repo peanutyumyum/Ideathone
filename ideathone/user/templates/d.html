@@ -1,0 +1,31 @@
+<head>
+	<meta charset="UTF-8">
+	<title>네이버 로그인</title>
+	<link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	<script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
+</head>
+<body>
+	<div class="main-container">
+		<div class="main-wrap">
+		<section class="login-input-section-wrap">
+			<form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+            </form>
+			<div class="login-button-wrap">
+				<button type="submit">Sign in</button>
+			</div>
+			<div class="login-stay-sign-in">
+				<i class="far fa-check-circle"></i>
+				<span>Stay Signed in</span>
+			</div>
+		</section>
+		<footer>
+			<div class="copyright-wrap">
+			<span>	<img src="img/logo.png"> Copyright © NAVER Corp. All Rights Reserved.</span>
+			</div>
+		</footer>
+		</div>
+	</div>
+</body>
