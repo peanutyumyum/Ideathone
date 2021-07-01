@@ -1,17 +1,70 @@
 {% extends 'base.html' %}
+    {% load static %}
     {% block title %}
     <title>Recommend page</title>
     {% endblock %}
     {% block search %}
-    <form id="recommend_items_form" action="{% url 'search:recommend_items' %}" method="GET">
-        {% csrf_token %}
-        {{recommend_forms}}
+    <form id = "recommend_items_form" action="{% url 'search:recommend_items' %}" method="GET">
+        {% csrf_token %}        
+        <select id = "place" name = 'place'>
+            <option value="">장소선택</option>
+            <option value="실내">실내</option>
+            <option value="실외">실외</option>
+        </select>
+        <select id = "place_size" name = 'place_size'>
+            <option value="">평수선택</option>
+            <option value="3평">3평</option>
+            <option value="4평">4평</option>
+            <option value="5평">5평</option>
+            <option value="6평">6평</option>
+            <option value="7평">7평</option>
+            <option value="8평">8평</option>
+            <option value="9평">9평</option>
+            <option value="10평">10평</option>
+            <option value="11평">11평</option>
+            <option value="12평">12평</option>
+            <option value="13평">13평</option>
+            <option value="14평">14평</option>
+            <option value="15평">15평</option>
+            <option value="16평">16평</option>
+            <option value="17평">17평</option>
+            <option value="18평">18평</option>
+            <option value="19평">19평</option>
+            <option value="20평">20평</option>
+            <option value="21평">21평</option>
+            <option value="22평">22평</option>
+        </select>
+        <select id = "style" name = 'style'>
+            <option value="">스타일선택</option>
+            <option value="밝은">밝은</option>
+            <option value="산뜻한">산뜻한</option>
+            <option value="어두운">어두운</option>
+            <option value="푸르른">푸르른</option>
+            <option value="청명한">청명한</option>
+            <option value="아늑한">아늑한</option>
+        </select>
+        <select id = "color" name = 'color'>
+            <option value="">선호색깔선택</option>
+            <option value="빨강">빨강</option>
+            <option value="초록">초록</option>
+            <option value="검정">검정</option>
+            <option value="회색">회색</option>
+            <option value="파랑">파랑</option>
+            <option value="하늘">하늘</option>
+        </select>
+        <select id = "size" name = 'size'>
+            <option value="">정원사이즈선택</option>
+            <option value="손바닥사이즈">손바닥사이즈</option>
+            <option value="A4용지사이즈">A4용지사이즈</option>
+            <option value="책상사이즈">책상사이즈</option>
+            <option value="소파사이즈">소파사이즈</option>
+        </select>
         <button type="submit">검색</button>
     </form>
-    {% if search_items %}
-        {% for item in search_items %}
-            {{item.name}}
-        {% endfor %}
+    {% if recommend_garden %}
+        <img src="{{recommend_garden.image.url}}"></a>
+        {{recommend_garden.name}}
     {% else %}
+        <p>아쉽게도 추천할 리스트가 존재하지 않는군요..ㅠ</p>
     {% endif %}
     {% endblock %}

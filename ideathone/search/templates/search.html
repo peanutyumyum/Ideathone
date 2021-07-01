@@ -1,3 +1,4 @@
+{% load static %}
 {% extends 'base.html' %}
     {% block title %}
     <link rel = "stylesheet" type="text/css" href="{% static 'css/search.css' %}">
@@ -11,6 +12,8 @@
     </form>
     {% if search_items %}
         {% for item in search_items %}
+            <a href="{% url 'search:detail' item.id %}"><img src="{{item.image.url}}"></a>
+            <br>
             {{item.name}}
         {% endfor %}
     {% else %}

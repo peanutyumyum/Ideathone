@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from .models import Item
+from .models import Garden, Item
 from django.db.models import Q
 
 from .forms import *
@@ -27,7 +27,7 @@ def search(request):
         return render(request, 'search.html')
     
 def recommend_items(request):
-    items = Item.objects.all()
+    gardens = Garden.objects.all()
     recommend_forms = RecommendForm()
     
     place = request.GET.get('place')
@@ -37,10 +37,12 @@ def recommend_items(request):
     size = request.GET.get('size')
 
     if place and place_size and style and color and size:
-        search_items = items.filter(Q(place__icontains = place) | Q(place_size__icontains = place_size) | Q(style__icontains = style) | Q(color__icontains = color) | Q(size__icontains = size))
+        search_gardens = gardens.filter(Q(place__icontains = place) | Q(place_size__icontains = place_size) | Q(style__icontains = style) | Q(color__icontains = color) | Q(size__icontains = size))
+        recommend_garden = search_gardens[0] ## 테스트용으로 첫 번째 DB 하나만 가져옴(추천 알고리즘은 나중에 더 연구해봅시다!)
+        print(recommend_garden)
         context = {
             'recommend_forms' : recommend_forms,
-            'search_items' : search_items,
+            'recommend_garden' : recommend_garden,
         }
         return render(request, 'recommend.html', context)
     else:
@@ -48,4 +50,10 @@ def recommend_items(request):
         'recommend_forms' : recommend_forms,
         }
         return render(request, 'recommend.html', context)
-    
+
+def detail(request, id):
+    garden = Garden.objects.get(pk=id)
+    context = {
+        'garden' : garden,
+    }
+    return render(request, 'detail.html', context)
