@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+    {% block content %}
+    <div class="line">
+        <h2>오늘의 트렌드</h2>
+    </div>
+    <div id="container">
+        <div class="slide_wrap">
+            <div class="slide_box">
+                <div class="slide_list clearfix">
+                    <div class="slide_content slide01">
+                        <div class="star star01" style="display: none">★☆☆☆☆</div>
+                    </div>
+                    <div class="slide_content slide02">
+                        <div class="star star02" style="display: none">★★☆☆☆</div>
+                    </div>
+                    <div class="slide_content slide03">
+                        <div class="star star03" style="display: none">★★★☆☆</div>
+                    </div>
+                    <div class="slide_content slide04">
+                        <div class="star star04" style="display: none">★★★★☆</div>
+                    </div>
+                    <div class="slide_content slide05">
+                        <div class="star star05" style="display: none">★★★★★</div>
+                    </div>
+                </div>
+                <!-- // .slide_list -->
+            </div>
+            <!-- // .slide_box -->
+            <div class="slide_btn_box">
+                <button type="button" class="slide_btn_prev">Prev</button>
+                <button type="button" class="slide_btn_next">Next</button>
+            </div>
+            <!-- // .slide_btn_box -->
+            <ul class="slide_pagination"></ul>
+            <!-- // .slide_pagination -->
+        </div>
+        <!-- // .slide_wrap -->
+    </div>
+    <!-- // .container -->
+    
+    <!-- Search -->
+    <div class="empty"></div>
+
+    <div class="line" id="search">
+        <h2>검색</h2>
+    </div>
+
+    <div class="fitSearchImgBox"></div>
+    <!-- End Search -->
+
+
+    <!-- Fit Search -->
+    <div class="empty"></div>
+
+    <div class="line" id="fitSearch">
+        <h2>맞춤형 서비스</h2>
+    </div>
+
+    <div class="fitSearchBox">
+        <div class="fitSearchItem">장소</div>
+        <div class="fitSearchItem">평수</div>
+        <div class="fitSearchItem">스타일</div>
+        <div class="fitSearchItem">컬러</div>
+        <div class="fitSearchItem">사이즈</div>
+    </div>
+    <div class="fitSearchImgBox"></div>
+
+    <!-- End Fit Search -->
+
+
+    <div class="empty"></div>
+    <div class="fitSearchImgBox"></div>
+    <div class="fitSearchImgBox"></div>
+    <div class="fitSearchImgBox"></div>
+    <div class="fitSearchImgBox"></div>
+    <div class="fitSearchImgBox"></div>
+    <div class="fitSearchImgBox"></div>
+    <div class="fitSearchImgBox"></div>
+    <div class="fitSearchImgBox"></div>
+    
+
+    
+    <button id="test">TEST</button>
+    {% endblock %}
