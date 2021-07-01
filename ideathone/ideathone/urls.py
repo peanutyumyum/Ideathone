@@ -24,7 +24,10 @@ urlpatterns = [
     # path('', include('main.urls', namespace='main')),
     path('', include('user.urls', namespace='user')),
     # path('search/', include('search.urls', namespace='search')),
+    # path('', include('django-bootstrap-calendar.urls', namespace='calendar'))
 ]
+
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

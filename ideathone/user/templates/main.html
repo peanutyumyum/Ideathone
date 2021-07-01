@@ -10,7 +10,7 @@
 <body>
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand">User Project</a>
+        <a class="navbar-brand">기르다</a>
         <form class="d-flex">
           {% if user.is_authenticated %} <!-- 로그인된 상태인지 체크 -->
               <a href = "{% url 'logout' %}" class = "btn btn-outline-primary mx-1">로그아웃</a>
@@ -22,7 +22,7 @@
       </div>
     </nav>
     {% if user.is_authenticated %}
-      {{user.username}}
+      #메인화면띄우기
     {% endif %}
     {% for blog in blogs %}
       {{blog.title}}
