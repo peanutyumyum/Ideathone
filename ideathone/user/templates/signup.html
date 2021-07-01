@@ -3,37 +3,45 @@
 <html lnag="ko">
     <head>
         <meta charset="UTF-8">
-        <title>네이버 : 회원가입</title>
+        <title>기르다 회원가입</title>
         <link rel="stylesheet" href="{% static 'new_main.css' %}">
-        
+        <script>
+			(function(d) {
+			  var config = {
+				kitId: 'rlk0qqk',
+				scriptTimeout: 3000,
+				async: true
+			  },
+			  h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+			})(document);
+		  </script>
+		  
     </head>
     <body>
-		<nav>
-			<ul class="nav-container">
-                <a class="nav-title">기르다</a>
-				<form class="d-flex">
-					{% if user.is_autheticated %}
-							<li class="nav-item"><a href="{% url 'logout' %}">로그아웃</a></li>
-						{% else %}
-					<li class="nav-item"><a href = "{% url 'login' %}">로그인</a></li>
-					<li class="nav-item"><a href = "{% url 'signup' %}">회원가입</a></li>
-						{% endif %}
-				</form>
-			</ul>
+		<nav class="navbar">
+			<div class="navBox1">
+				<div class="navItem"><i class="bi bi-search"></i></div>
+				<div class="navItem" id="move1">검색</div>
+				<div class="navItem" id="move2">맞춤형 서비스</div>
+			</div>
+			<div class="navBox2"><img class="logo" src="{% static 'img/logo.png' %}"></div>
+			<div class="navBox3">
+				<div class="navItem"><i class="bi bi-cart3"></i></div>
+				<div class="navItem"><i class="bi bi-person-fill"></i></div>
+				<div class="navItem"><a href = "{% url 'login' %}">로그인</a></div>
+				<div class="navItem"><a href = "{% url 'signup' %}">회원가입</a></div>
+			</div>
 		</nav>
 
         <!-- header -->
-        <div id="header">
-            <h1>Welcome to 기르다!</h1>
-        </div>
-
+        
 		<form action="{% url 'signup' %}" method="POST">
+			{% csrf_token %}
 			<!-- wrapper -->
 			<div id="wrapper">
 
 				<!-- content-->
 				<div id="content">
-	
 					<!-- ID -->
 					<div>
 						<h3 class="join_title">
@@ -44,7 +52,6 @@
 						</span>
 						<span class="error_next_box"></span>
 					</div>
-	
 					<!-- PW1 -->
 					<div>
 						<h3 class="join_title"><label for="pswd1">비밀번호</label></h3>
@@ -54,7 +61,6 @@
 						</span>
 						<span class="error_next_box"></span>
 					</div>
-	
 					<!-- PW2 -->
 					<div>
 						<h3 class="join_title"><label for="pswd2">비밀번호 재확인</label></h3>
@@ -63,7 +69,6 @@
 						</span>
 						<span class="error_next_box"></span>
 					</div>
-	
 					<!-- NAME -->
 					<div>
 						<h3 class="join_title"><label for="name">이름</label></h3>
@@ -72,7 +77,6 @@
 						</span>
 						<span class="error_next_box"></span>
 					</div>
-	
 					<!-- EMAIL -->
 					<div>
 						<h3 class="join_title"><label for="email">본인확인 이메일<span class="optional">(선택)</span></label></h3>
@@ -81,7 +85,6 @@
 						</span>
 						<span class="error_next_box">이메일 주소를 다시 확인해주세요.</span>    
 					</div>
-	
 					<!-- MOBILE -->
 					<div>
 						<h3 class="join_title"><label for="phoneNo">휴대전화</label></h3>
@@ -90,20 +93,15 @@
 						</span>
 						<span class="error_next_box"></span>    
 					</div>
-	
-	
 					<!-- JOIN BTN-->
 					<div class="btn_area">
-						<button type="button" id="btnJoin">
-							<span>가입하기</span>
+						<button type="submit" id="btnJoin">
+							<span>기르다 가족되기</span>
 						</button>
 					</div>
-	
-					
-	
+
 				</div> 
 				<!-- content-->
-	
 			</div>
 		</form>
 

@@ -21,10 +21,10 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', include('main.urls', namespace='main')),
-    path('', include('user.urls', namespace='user')),
-    # path('search/', include('search.urls', namespace='search')),
-    # path('', include('django-bootstrap-calendar.urls', namespace='calendar'))
+    path('', include('main.urls', namespace='main')),
+    path('user/', include('user.urls', namespace='user')),
+    path('search/', include('search.urls', namespace='search')),
+    path('date/', include('date.urls', namespace='date'))
 ]
 
 

@@ -33,16 +33,16 @@ AUTH_USER_MODEL = 'user.CustomUser'
 # Application definition
 
 INSTALLED_APPS = [
-    # 'main',
-    'user',
-    # 'django-bootstrap-calendar'
-    # 'search',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'main',
+    'user',
+    'date',
+    'search',
 ]
 
 

@@ -1,54 +1,41 @@
-html {
-    height: 100%;
-}
 
-body {
-    margin: 0;
-    height: 100%;
-    background: #f5f6f7;
-    font-family: Dotum,'돋움',Helvetica,sans-serif;
-}
-.nav-container {
-    display: block;
+.navbar {
+    display: flex;
     flex-direction: row;
-    width: 100%;
-    margin: 0;
-    padding-top: 20px;
-    height: 20px;
-    list-style-type: none;
+    justify-content: space-between;
+    margin: 5%;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 10;
 }
-.nav-title{
-	text-align: center;
-	font-size: 30px;
+.navBox1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 30%;
 
 }
-
-.nav-item {
-    display: inline;
-    padding: 15px;
-    cursor: pointer;
+.navBox2 {
+    display: flex;
+    width: 40%;
+    justify-content: center;
 }
-
-
-
-.nav-item a {
+.navBox3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: flex-end;
+    width: 30%;
     float: right;
-    text-align: center;
-    text-decoration: none;
-    color:black;
-    
-}
-#logo {
-    width: 240px;
-    height: 44px;
-    cursor: pointer;
-}
 
-#header {
-    padding-top: 62px;
-    padding-bottom: 20px;
-    text-align: center;
 }
+.navItem { padding: 3%; }
+.navItem:hover { border-bottom: 2px solid black; cursor:pointer; }
+.logo { width: 200px; }
+
 #wrapper {
     position: relative;
     height: 100%;
@@ -205,8 +192,7 @@ select {
     border: 0;
     cursor: pointer;
     color: #fff;
-    background-color: #08a600;
+    background-color: #70f869;
     font-size: 20px;
     font-weight: 400;
-    font-family: Dotum,'돋움',Helvetica,sans-serif;
 }

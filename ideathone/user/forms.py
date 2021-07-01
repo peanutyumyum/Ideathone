@@ -15,4 +15,4 @@ class BlogForm(forms.ModelForm):
 class RegistorForm(UserCreationForm):
     class Meta:
         model = CustomUser
-        fields = ['username','password1','password2', 'e_mail','phone_number', 'location']
+        fields = ['username','password1','password2', 'e_mail','phone_number']
