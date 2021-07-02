@@ -10,19 +10,26 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 5%;
+    padding: 5%;
+    padding-top: 0%;
+    padding-bottom: 0%;
     margin-top: 2%;
-    margin-bottom: 0%;
     position: sticky;
     top: 0;
     background-color: white;
     z-index: 10;
 }
+.navBox1 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    width: 30%;
 
+}
 .navBox2 {
     display: flex;
     width: 40%;
-    justify-content: left;
+    justify-content: center;
 }
 .navBox3 {
     display: flex;
@@ -35,8 +42,9 @@
 }
 .navItem { padding: 3%; }
 .navItem:hover { border-bottom: 2px solid black; cursor:pointer; }
-.logo { width: 200px; }
 
+
+.logo { width: 200px; }
 
 .calendar {
   width: 400px;
