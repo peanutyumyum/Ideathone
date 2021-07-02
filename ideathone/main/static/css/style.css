@@ -2,9 +2,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: 5%;
+    padding: 5%;
+    padding-top: 0%;
+    padding-bottom: 0%;
     margin-top: 2%;
-    margin-bottom: 0%;
     position: sticky;
     top: 0;
     background-color: white;
@@ -88,9 +89,34 @@
     background-size : cover;
     width: 1000px;
     height: 470px;
-    border: 1px solid black;
     margin: auto;
 }
+
+.fitTag {
+    width: 30px;
+    height: 30px;
+    color: rgba(255, 255, 255, 0.97);
+    cursor: pointer;
+    position: relative;
+}
+.fitTagOn {
+    width: 200px;
+    height: 50px;
+    border-radius: 50px;
+    padding-right: 7px;
+    background-color: #c2d7c8ef;
+    color: white;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.tag01 { left: 920px; top: 150px; }
+.tag02 { left: 100px; top: 150px; }
+.tag03 { left: 800px; top: 300px; }
+.ontag01 { right: 185px; top: -100px; }
+.ontag02 { left: 10px; top: -50px; }
+.ontag03 { right: 185px; top: -100px; }
 
 
 html, body { box-sizing: border-box; padding: 0; margin: 0; text-align: center; }
@@ -104,7 +130,7 @@ html, body { box-sizing: border-box; padding: 0; margin: 0; text-align: center; 
 .slide_wrap { position: relative; width: 1000px; margin: auto; padding-bottom: 30px; }
 .slide_box { width: 100%; margin: auto; overflow-x: hidden; }
 .slide_content { align-items: center;  display: flex; float: left; width: 1000px; height: 500px; }
-.slide_content > .star { width: 100%; justify-content: center; display: table-cell; vertical-align: middle; text-align: center; font-size: 100px; font-weight: bold; color: rgb(255, 244, 88); }
+.slide_content > .star { width: 100%; justify-content: center; display: table-cell; vertical-align: middle; text-align: center; font-size: 100px; font-weight: bold; color: white; }
 .slide_content.slide01 { background-image: url('../img/main-1.jpg'); background-repeat : no-repeat; background-size : cover; }
 .slide_content.slide02 { background-image: url('../img/main-2.jpg'); background-repeat : no-repeat; background-size : cover; }
 .slide_content.slide03 { background-image: url('../img/main-3.jpg'); background-repeat : no-repeat; background-size : cover; }

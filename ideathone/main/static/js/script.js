@@ -132,6 +132,16 @@ fitMove.addEventListener('click', function() {
 })
 
 
+// fitSearch Tag click
+function onFitTag(className) {
+    const onFitTag = document.querySelector(className);
+
+    if (onFitTag.style.display === "none") {
+    onFitTag.style.display = "flex";
+    } else {
+        onFitTag.style.display = "none";
+    }
+}
 
 
 
@@ -139,9 +149,6 @@ fitMove.addEventListener('click', function() {
 
 
 // test
-const testbtn = document.getElementById("test");
-
-testbtn.addEventListener('click', function() {
-    console.log('클릭됨');
-    console.log(fitLocation);
-});
+function test() {
+    console.log('test');
+}
