@@ -15,16 +15,20 @@ def search(request):
         if search_items:   
             context = {
                 'search_word' : search_word,
-                'search_items' : search_items
+                'items' : search_items
             }
-            return render(request, 'search.html', context)
         else:
+            no_search_data = items.filter(name = 'no_data')
             context = {
                 'search_word' : search_word,
+                'items' : no_search_data
             }
-            return render(request, 'search.html', context)
     else:
-        return render(request, 'search.html')
+        context = {
+                'search_word' : search_word,
+                'items' : items
+            }
+    return render(request, 'search.html', context)
     
 def recommend_items(request):
     gardens = Garden.objects.all()
@@ -52,8 +56,8 @@ def recommend_items(request):
         return render(request, 'recommend.html', context)
 
 def detail(request, id):
-    garden = Garden.objects.get(pk=id)
+    item = Item.objects.get(pk=id)
     context = {
-        'garden' : garden,
+        'item' : item,
     }
     return render(request, 'detail.html', context)

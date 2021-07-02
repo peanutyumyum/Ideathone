@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
     {% load static %}
     {% block title %}
+    <link rel = "stylesheet" type="text/css" href="{% static 'css/recommend.css' %}">
     <title>Recommend page</title>
     {% endblock %}
-    {% block search %}
-    <form id = "recommend_items_form" action="{% url 'search:recommend_items' %}" method="GET">
+    {% block body %}
+    <form id = "recommend_garden_form" action="{% url 'search:recommend_items' %}" method="GET">
         {% csrf_token %}        
         <select id = "place" name = 'place'>
             <option value="">장소선택</option>
@@ -62,9 +63,9 @@
         <button type="submit">검색</button>
     </form>
     {% if recommend_garden %}
-        <img src="{{recommend_garden.image.url}}"></a>
+        <img src="{{recommend_garden.image.url}}">
         {{recommend_garden.name}}
     {% else %}
-        <p>아쉽게도 추천할 리스트가 존재하지 않는군요..ㅠ</p>
+        <img src="{% static 'img/recommend_defalt_image.img' %}">
     {% endif %}
     {% endblock %}

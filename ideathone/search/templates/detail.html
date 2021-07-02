@@ -1,1 +1,48 @@
-{% load static %}
+{% extends 'base.html' %}
+    {% load static %}
+    {% block title %}
+    <link rel = "stylesheet" type="text/css" href="{% static 'css/detail.css' %}">
+    <title>Detail page</title>
+    {% endblock %}
+    {% block body %}
+    <div id='container'>
+        <div id="search_form_box">
+        <form id = "search_form" action = "{% url 'search:search' %}" method = "GET">
+            {% csrf_token %}
+            <input type="search" placeholder="원하는 식물을 검색해 주세요" name="search_word">
+            <button type="submit">검색</button>
+        </form>
+        </div>
+        <div id="result box">
+            <div id='image box'>
+                <img src="{{item.image.url}}">
+            </div>
+            <div id='content box'>
+                <div id='name box'>
+                    {{item.name}}
+                    {{iten.name_en}}
+                    {{item.price}}
+                </div>
+                <div id='specific_content_box'>
+                    <div id="water period and temperature box">
+                        <div id="water box">
+                            {{item.water_period}}
+                        </div>
+                        <div id="temperature box">
+                            {{item.temperature}}
+                        </div>
+                    </div>
+                    <div id="proper place and cautuin box">
+                        <div id="proper place box">
+                            {{item.proper_place}}
+                        </div>
+                        <div id="cautuin box">
+                            {{item.caution}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    {% endblock %}

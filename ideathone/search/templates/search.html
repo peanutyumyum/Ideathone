@@ -1,22 +1,31 @@
-{% load static %}
 {% extends 'base.html' %}
+{% load static %}
     {% block title %}
     <link rel = "stylesheet" type="text/css" href="{% static 'css/search.css' %}">
     <title>Search page</title>
     {% endblock %}
-    {% block search %}
-    <form id = "search_form" action = "{% url 'search:search' %}" method = "GET">
-        {% csrf_token %}
-        <input type="search" placeholder="검색어를 입력하세요" name="search_word" value="{{search_word}}">
-        <button type="submit">검색</button>
-    </form>
-    {% if search_items %}
-        {% for item in search_items %}
-            <a href="{% url 'search:detail' item.id %}"><img src="{{item.image.url}}"></a>
-            <br>
-            {{item.name}}
-        {% endfor %}
-    {% else %}
-        <h1>검색결과가 없습니다</h1>
-    {% endif %}
+    {% block body %}
+    <div id='container'>
+        <div id="search_form_box">
+            <form id = "search_form" action = "{% url 'search:search' %}" method = "GET">
+                {% csrf_token %}
+                <input type="search" placeholder="원하는 식물을 검색해주세요" name="search_word" value="{{search_word}}">
+                <button type="submit">검색</button>
+            </form>
+        </div>
+        <div id="recommend_keyword_box">
+            <p>추천키워드</p><p># 선인장</p><p># 다육식물</p><p># 공중식물</p><p># 덩굴식물</p>
+        </div>
+        <div id="search_result_box">
+            {% if items.name == 'no_data' %}
+                <img id="no_data_img" src="{{items.image.url}}" width="1000">
+            {% else %}
+                {% for item in items %}
+                    <a href="{% url 'search:detail' item.id %}"><img id="search_image" src="{{item.image.url}}"></a>
+                    <br>
+                    {{item.name}}
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
     {% endblock %}
