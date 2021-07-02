@@ -24,7 +24,7 @@ urlpatterns = [
     path('', include('main.urls', namespace='main')),
     path('user/', include('user.urls', namespace='user')),
     path('search/', include('search.urls', namespace='search')),
-    path('date/', include('date.urls', namespace='date'))
+    path('date/', include('date.urls', namespace='date')),
 ]
 
 

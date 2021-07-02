@@ -28,14 +28,14 @@
 			<div class="navBox3">
 				<div class="navItem"><i class="bi bi-cart3"></i></div>
 				<div class="navItem"><i class="bi bi-person-fill"></i></div>
-				<div class="navItem"><a href = "{% url 'login' %}">로그인</a></div>
-				<div class="navItem"><a href = "{% url 'signup' %}">회원가입</a></div>
+				<div class="navItem"><a href = "{% url 'user:login' %}">로그인</a></div>
+				<div class="navItem"><a href = "{% url 'user:signup' %}">회원가입</a></div>
 			</div>
 		</nav>
 
         <!-- header -->
         
-		<form action="{% url 'signup' %}" method="POST">
+		<form action="{% url 'user:signup' %}" method="POST">
 			{% csrf_token %}
 			<!-- wrapper -->
 			<div id="wrapper">

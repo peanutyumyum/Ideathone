@@ -5,8 +5,6 @@
 	--naver-green-color: #04c75a;
 	--naver-green-border-color: #06b350;
 }
-
-
 *{
 	margin:0;
 	padding:0;
@@ -123,9 +121,9 @@ body{
 	width: 465px;
 	height :48px;
 	font-size: 18px;
-	background: var(--naver-green-color);
+	background-color: #70f869;
 	color: white;
-	border: solid 1px var(--naver-green-border-color);
+	border: #70f869;;
 }
 .login-stay-sign-in{
 	width: 465px;

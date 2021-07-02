@@ -27,8 +27,8 @@
 		<div class="navBox3">
 			<div class="navItem"><i class="bi bi-cart3"></i></div>
 			<div class="navItem"><i class="bi bi-person-fill"></i></div>
-			<div class="navItem"><a href = "{% url 'login' %}">로그인</a></div>
-			<div class="navItem"><a href = "{% url 'signup' %}">회원가입</a></div>
+			<div class="navItem"><a href = "{% url 'user:login' %}">로그인</a></div>
+			<div class="navItem"><a href = "{% url 'user:signup' %}">회원가입</a></div>
 		</div>
 	</nav>
 	<div class="main-container">
@@ -36,7 +36,7 @@
 		<header>
 		</header>
 		<section class="login-input-section-wrap">
-			<form action="{% url 'login' %}" method="POST">
+			<form action="{% url 'user:login' %}" method="POST">
 				{% csrf_token %}
 				<div class="login-input-wrap">	
           		<input placeholder="Username" type="text"></input>

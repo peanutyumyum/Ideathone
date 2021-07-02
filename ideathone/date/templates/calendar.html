@@ -5,17 +5,28 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link rel="stylesheet" href="{% static 'stylee.css' %}">
   <title>Calendar</title>
 </head>
 <body>
+  <nav class="navbar">
+		
+		<div class="navBox2"><img class="logo" src="{% static 'img/logo.png' %}"></div>
+		<div class="navBox3">
+			<div class="navItem"><i class="bi bi-cart3"></i></div>
+			<div class="navItem"><i class="bi bi-person-fill"></i></div>
+      <div class="navItem"><a href = "{% url 'user:logout' %}">로그아웃</a></div>
+		</div>
+	</nav>
+
+
   <div class="calendar">
     <div class="header">
       <div class="year-month"></div>
       <div class="nav">
-        <button class="nav-btn go-prev" onclick="prevMonth()">&lt;</button>
+        <button class="nav-btn go-prev" onclick="premonth()">&lt;</button>
         <button class="nav-btn go-today" onclick="goToday()">Today</button>
-        <button class="nav-btn go-next" onclick="nextMonth()">&gt;</button>
+        <button class="nav-btn go-next" onclick="nextmonth()">&gt;</button>
       </div>
     </div>
     <div class="main">
@@ -30,7 +41,16 @@
       </div>
       <div class="dates"></div>
     </div>
+    <div class="resv-wrapper">
+      <div class="resv-bg">
+          <button class="resv-close">X</button>
+              <input class="resv_set time" type="time" name="" id="">
+              <button class="resv_btn purchase">예약</button>
+              <button class="resv_btn cancel">취소</button>
+      </div>
+  </div>
   </div>
   <script src="{% static 'index.js' %}"></script>
+  <script src="{% static 'reserve.js' %}"></script>
 </body>
 </html>

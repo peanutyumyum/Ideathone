@@ -41,8 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'main',
     'user',
-    'date',
     'search',
+    'date',
 ]
 
 
@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'user.urls'
+ROOT_URLCONF = 'ideathone.urls'
 
 TEMPLATES = [
     {

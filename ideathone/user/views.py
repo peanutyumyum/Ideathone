@@ -21,14 +21,14 @@ def login_view(request):
             user = authenticate(request=request, username = username, password=password)
             if user is not None :
                 login(request, user)
-            return redirect("main")
+            return redirect("main.html")
     else :
         form = AuthenticationForm()
     return render(request, 'login.html', {'form':form}) #Get방식
 
 def logout_view(requset):
     logout(requset)
-    return redirect("main")
+    return redirect("main.html")
 
 def signup_view(request):
     if request.method == "POST": #요청방식이 POST
@@ -36,7 +36,7 @@ def signup_view(request):
         if form.is_valid(): #form 유효성 검사
             user = form.save()
             login(request, user)
-        return redirect("main")
+        return redirect("main.html")
     else: #요청방식이 GET
         form = RegistorForm()
     return render(request, 'signup.html', {'form':form})
@@ -55,4 +55,4 @@ def create(request):
         new_blog = form.save(commit=False)
         new_blog.pub_date = timezone.now()
         new_blog.save()
-    return redirect('main')
+    return redirect('main.html')
