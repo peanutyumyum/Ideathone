@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'main',
     'user',
     'search',
+    'detailApp',
     'date',
 ]
 

@@ -1,0 +1,92 @@
+/* 정렬 display flex 사용됨*/
+
+/*전체 박스*/
+.mainbox{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-evenly;
+    
+}
+/*이미지 아닌 거 감싸는 전체 박스*/
+
+.mainbox_detail{
+    display: inherit;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    
+}
+
+/*식물기르는 설명*/
+
+.mainbox_detail__explain{
+    
+    display: inherit;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+}
+
+/*장바구니+ 구매*/
+
+.mainbox_detail__buy{
+    display: inherit;
+    flex-direction: row;
+}
+
+/* 테두리 */
+.mainbox_detail__explain_f,
+.mainbox_detail__explain_s{
+    
+    font-weight: 500;
+    font-style: normal;
+}
+
+.basket,.buying{
+    text-align: center;
+    width: 340px;
+    height: 60px;
+    border: 1px solid black;
+    font-weight: 400;
+    font-style: normal;
+    border: none;
+}
+.water,.sun,.cel,.wind{
+    border: 1px solid rgb(190, 190, 190);
+    width: 330px;
+    height: 150px;
+    /*위치*/
+}
+.sec_move{
+    position: relative;
+    top: 20px;
+}
+
+.move{
+    position: relative;
+    left: 63px;
+    top: 50px;
+}
+.more_detail{
+    position: relative;
+    left: 100px;
+    top: 70px;
+}
+
+/*색깔*/
+
+.fa-tint{
+    color: blue;
+}
+.fa-thermometer-half{
+    color: cadetblue;
+}
+.fa-sun{
+    color: crimson;
+}
+.fa-wind{
+    color: darkblue;
+}
+
