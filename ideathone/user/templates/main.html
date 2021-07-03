@@ -23,6 +23,9 @@
 			<div class="navItem"><a href = "{% url 'user:signup' %}">회원가입</a></div>
 		</div>
 	</nav>
+	<div class="line">
+		<h2>마이 페이지</h2>
+	  </div>
     {% if user.is_authenticated %}
       #메인화면띄우기
     {% endif %}
