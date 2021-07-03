@@ -18,38 +18,44 @@
       <div class="navItem"><a href = "{% url 'user:logout' %}">로그아웃</a></div>
 		</div>
 	</nav>
-
-
-  <div class="calendar">
-    <div class="header">
-      <div class="year-month"></div>
-      <div class="nav">
-        <button class="nav-btn go-prev" onclick="premonth()">&lt;</button>
-        <button class="nav-btn go-today" onclick="goToday()">Today</button>
-        <button class="nav-btn go-next" onclick="nextmonth()">&gt;</button>
+  <div style="border: 1px; float: left; margin-left: 300px;">
+    <p style="margin-top: 70px;">나의 캘린더</p>
+    <p style="margin-top: 150px;">아라비안 자스빈</p>
+    <img src="{% static 'img/img1.jpg' %}" width="200px" height="200px">
+  </div>
+  <div style="border: 1px; float: right; margin-right: 300px;">
+    <div class="calendar">
+      <div class="header">
+        <div class="year-month"></div>
+        <div class="nav">
+          <button class="nav-btn go-prev" onclick="premonth()">&lt;</button>
+          <button class="nav-btn go-today" onclick="goToday()">Today</button>
+          <button class="nav-btn go-next" onclick="nextmonth()">&gt;</button>
+        </div>
       </div>
-    </div>
-    <div class="main">
-      <div class="days">
-        <div class="day">일</div>
-        <div class="day">월</div>
-        <div class="day">화</div>
-        <div class="day">수</div>
-        <div class="day">목</div>
-        <div class="day">금</div>
-        <div class="day">토</div>
+      <div class="main">
+        <div class="days">
+          <div class="day">일</div>
+          <div class="day">월</div>
+          <div class="day">화</div>
+          <div class="day">수</div>
+          <div class="day">목</div>
+          <div class="day">금</div>
+          <div class="day">토</div>
+        </div>
+        <div class="dates"></div>
       </div>
-      <div class="dates"></div>
-    </div>
-    <div class="resv-wrapper">
-      <div class="resv-bg">
-          <button class="resv-close">X</button>
-              <input class="resv_set time" type="time" name="" id="">
-              <button class="resv_btn purchase">일정</button>
-              <button class="resv_btn cancel">취소</button>
+      <div class="resv-wrapper">
+        <div class="resv-bg">
+            <button class="resv-close">X</button>
+                <input class="resv_set time" type="time" name="" id="">
+                <button class="resv_btn purchase">일정</button>
+                <button class="resv_btn cancel">취소</button>
+        </div>
       </div>
     </div>
   </div>
+  
   <script src="{% static 'js/index.js' %}"></script>
   <script src="{% static 'js/reserve.js' %}"></script>
 </body>
