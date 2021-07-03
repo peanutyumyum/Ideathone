@@ -68,6 +68,40 @@
 
 .empty { margin: 80px; }
 
+.searchbar {
+    border-radius: 50px;
+    width: 450px;
+    height: 35px;
+    padding-left: 35px;
+    margin-left: 25px;
+    color: #366e3c;
+}
+.searchBtn {
+    position: relative;
+    border: 0px;
+    background-color: white;
+    left: -445px;
+    cursor: pointer;
+}
+.recommendBox {
+    margin-top: 1%;
+    margin-bottom: 3%;
+    padding-right: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+.recommendBox > p { padding-left: 1%; padding-right: 1%; }
+.recommendBox > div { 
+    border: 1px solid #366e3c;
+    width: 100px;
+    height: 40px;
+    padding-top: 9px;
+    margin-right: 1%;
+    border-radius: 20px / 30px;
+}
+
 .fitSearchBox {
     display: flex;
     flex-direction: row;
@@ -81,7 +115,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1%;
+    margin-left: 1%;
+    margin-right: 1%;
+}
+.fitDropdown {
+    cursor: pointer;
+    position: relative;
+    left: 38px;
 }
 .fitSearchImgBox {
     background-image: url('../img/fitimg.jpg');

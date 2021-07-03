@@ -45,6 +45,24 @@
         <h2>검색</h2>
     </div>
 
+    <form
+      action="#"
+      method="POST"
+      enctype="multipart/form-data"
+    >
+      {%csrf_token%}
+      <input type="text" name="search" class="searchbar" placeholder="원하는 식물을 검색하세요"/>
+      <button type="submit" class="searchBtn"><i class="bi bi-search"></i></button>
+    </form>
+
+    <div class="recommendBox">
+        <div>추천키워드</div>
+        <p># 선인장</p>
+        <p># 다육식물</p>
+        <p># 공중식물</p>
+        <p># 덩굴식물</p>
+    </div>
+
     <div class="fitSearchImgBox"></div> <!--- 임시 -->
     <!-- End Search -->
 
@@ -57,11 +75,12 @@
     </div>
 
     <div class="fitSearchBox">
-        <div class="fitSearchItem">장소</div>
-        <div class="fitSearchItem">평수</div>
-        <div class="fitSearchItem">스타일</div>
-        <div class="fitSearchItem">컬러</div>
-        <div class="fitSearchItem">사이즈</div>
+        <div class="fitSearchItem">장소<div class="fitDropdown"><i class="bi bi-chevron-down"></i></div></div>
+        <div class="fitSearchItem">평수<div class="fitDropdown"><i class="bi bi-chevron-down"></i></div></div>
+        <div class="fitSearchItem">스타일<div class="fitDropdown"><i class="bi bi-chevron-down"></i></div></div>
+        <div class="fitSearchItem">컬러<div class="fitDropdown"><i class="bi bi-chevron-down"></i></div></div>
+        <div class="fitSearchItem">사이즈<div class="fitDropdown"><i class="bi bi-chevron-down"></i></div></div>
+        <div><i class="bi bi-search"></i></div>
     </div>
 
     <div class="fitSearchImgBox">
@@ -101,5 +120,5 @@
     <div class="empty"></div>
     
 
-    
+
     {% endblock %}
