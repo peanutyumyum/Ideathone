@@ -5,12 +5,7 @@ from django.forms import utils
 
 from django.contrib.auth.forms import UserCreationForm
 
-from .models import Blog, CustomUser
-
-class BlogForm(forms.ModelForm):
-    class Meta():
-        model = Blog
-        fields = ['title', 'writer', 'body','image']
+from .models import  CustomUser
 
 class RegistorForm(UserCreationForm):
     class Meta:
