@@ -79,7 +79,7 @@
 .searchBtn {
     position: relative;
     border: 0px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     left: -445px;
     cursor: pointer;
 }
