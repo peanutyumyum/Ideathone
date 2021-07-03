@@ -45,13 +45,9 @@
         <h2>검색</h2>
     </div>
 
-    <form
-      action="#"
-      method="POST"
-      enctype="multipart/form-data"
-    >
+    <form action="{% url 'search:search' %}" method="GET">
       {%csrf_token%}
-      <input type="text" name="search" class="searchbar" placeholder="원하는 식물을 검색하세요"/>
+      <input type="text" name="search" class="searchbar" placeholder="원하는 식물을 검색하세요" value="{{search_word}}">
       <button type="submit" class="searchBtn"><i class="bi bi-search"></i></button>
     </form>
 
@@ -63,7 +59,17 @@
         <p># 덩굴식물</p>
     </div>
 
-    <div class="fitSearchImgBox"></div> <!--- 임시 -->
+    <div class="fitSearchImgBox">
+        {% if items.name == 'no_data' %}
+            <img id="no_data_img" src="{{items.image.url}}" width="1000">
+        {% else %}
+            {% for item in items %}
+                <a href="{% url 'search:detail' item.id %}"><img id="search_image" src="{{item.image.url}}"></a>
+                <br>
+                {{item.name}}
+            {% endfor %}
+        {% endif %}
+    </div> <!--- 임시 -->
     <!-- End Search -->
 
 

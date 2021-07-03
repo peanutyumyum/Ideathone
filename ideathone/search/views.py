@@ -17,18 +17,20 @@ def search(request):
                 'search_word' : search_word,
                 'items' : search_items
             }
+            return render(request, 'main.html', context)
         else:
             no_search_data = items.filter(name = 'no_data')
             context = {
                 'search_word' : search_word,
                 'items' : no_search_data
             }
+            return render(request, 'main.html', context)
     else:
         context = {
                 'search_word' : search_word,
                 'items' : items
             }
-    return render(request, 'search.html', context)
+        return render(request, 'main.html', context)
     
 def recommend_items(request):
     gardens = Garden.objects.all()
@@ -48,12 +50,12 @@ def recommend_items(request):
             'recommend_forms' : recommend_forms,
             'recommend_garden' : recommend_garden,
         }
-        return render(request, 'recommend.html', context)
+        return render(request, 'main.html', context)
     else:
         context = {
         'recommend_forms' : recommend_forms,
         }
-        return render(request, 'recommend.html', context)
+        return render(request, 'main.html', context)
 
 def detail(request, id):
     item = Item.objects.get(pk=id)

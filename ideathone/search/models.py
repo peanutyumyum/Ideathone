@@ -5,7 +5,7 @@ from django.db import models
 class Item(models.Model):
     name = models.CharField(max_length=200)
     name_en = models.CharField(max_length=200)
-    price = models.IntegerField()
+    price = models.TextField()
     water_period = models.TextField()
     proper_place = models.TextField()
     temperature = models.TextField()
