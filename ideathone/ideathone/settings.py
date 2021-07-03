@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+AUTH_USER_MODEL = 'user.CustomUser'
 
 # Application definition
 
@@ -41,7 +42,9 @@ INSTALLED_APPS = [
     'main',
     'user',
     'search',
+    'date',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
