@@ -25,7 +25,10 @@ urlpatterns = [
     path('user/', include('user.urls', namespace='user')),
     path('search/', include('search.urls', namespace='search')),
     path('detailApp/',include('detailApp.urls',namespace='detailApp'))
+    path('date/', include('date.urls', namespace='date')),
 ]
+
+
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
