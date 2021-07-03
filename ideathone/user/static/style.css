@@ -56,6 +56,36 @@ body{
 
 .logo { width: 200px; }
 
+
+.line {
+    display: flex;
+    flex-basis: 100%;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    margin: 8px 0px;
+}
+.line::before {
+    content: "";
+    flex-grow: 1;
+    margin: 0px 16px 0px;
+    margin-left: 5%;
+    background: rgb(0, 0, 0, 0.5);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}
+.line::after {
+    content: "";
+    flex-grow: 1;
+    margin: 0px 16px;
+    margin-right: 5%;
+    background: rgb(0, 0, 0, 0.5);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+}
+
 .main-container{
 	width:100%;
 	display:flex;
