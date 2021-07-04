@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!--글씨체-->
+    <script>
+        (function(d) {
+          var config = {
+            kitId: 'rlk0qqk',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
+      <script>
+        (function(d) {
+          var config = {
+            kitId: 'vew7jat',
+            scriptTimeout: 3000,
+            async: true
+          },
+          h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+        })(document);
+      </script>
+    <!--구글폰트-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+    <!--css파일로드-->
+    
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <link rel="stylesheet" href="{% static 'more.css' %}">
+    <link rel="stylesheet" href="{% static 'nav.css' %}">
+    <title>가이드북</title>
+</head>
+<body>
+    <!--nav-->
+    <nav class="navbar">
+        <div class="navBox1">
+            <div class="navItem"><i class="bi bi-search"></i></div>
+            <div class="navItem" id="move1" style="font-family: hayanbaram,sans-serif;
+font-weight: 400;
+font-style: normal;
+">검색</div>
+            <div class="navItem" id="move2" style="font-family: hayanbaram,sans-serif;
+font-weight: 400;
+font-style: normal;
+">맞춤형 서비스</div>
+        </div>
+        <div class="navBox2"><img class="logo" src="{% static 'img/logo.png' %}"></div>
+        <div class="navBox3">
+            <div class="navItem"><i class="bi bi-cart3"></i></div>
+            <div class="navItem"><i class="bi bi-person-fill"></i></div>
+            <div class="navItem" style="font-family: hayanbaram,sans-serif;
+font-weight: 400;
+font-style: normal;
+">로그인</div>
+            <div class="navItem" style="font-family: hayanbaram,sans-serif;
+font-weight: 400;
+font-style: normal;
+">회원가입</div>
+        </div>
+    </nav>
+    <div class="line">
+        <h2>가이드북</h2>
+    </div>
+    <!--body-->
+    <div class="mainbox">
+        <div class="mainbox_img">
+            <img src="/static/금전수.jpg" height="286" width="214"/>
+        </div>
+        <div class="mainbox_detail">
+            <div class="mainbox_detail__name">
+                    <div class="space"></div>
+                    <span style="font-family: hayanbaram,sans-serif; font-size: 25px;">금전수</span>
+                    <div class="space"></div>
+                    <span style="font-family: hayanbaram,sans-serif; font-size: 20px; text-align: end;">Money Tree</span>
+                    <div class="space"></div>
+                    <span style="font-family: rixstraight-pro, sans-serif; font-size: 20px; font-weight: 500;
+                    font-style: normal; text-align: end;">31,750 원</span>
+                    <div class="space"></div>
+                    <div></div>
+            </div>
+            <div class="mainbox_detail__explain">
+                <div class="mainbox_detail__explain_f">
+                    <div class="explain_water water">
+                        <div>
+                            <i class="move fas fa-tint fa-3x"></i>
+                            <div class="more_detail_water" style="font-family: rixstraight-pro, sans-serif; font-size: 20px; font-weight: 500;">
+                                건조한 환경 
+                                <br>
+                                3주 1회 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="explain_sun sun">
+                        <i class="move fas fa-thermometer-half fa-3x"></i>
+                        <div class="more_detail_sun" style="font-family: rixstraight-pro, sans-serif; font-size: 20px; font-weight: 500;">
+                            반양지, 반음지
+                        </div>
+                    </div>
+                </div>
+                <div class="mainbox_detail__explain_s">
+                    <div class="explain_cel cel">
+                        <i class="move far fa-sun fa-3x"></i>
+                        <div class="more_detail_cel" style="font-family: rixstraight-pro, sans-serif; font-size: 20px; font-weight: 500;">
+                            15°C ~ 20°C
+                        </div>
+                    </div>
+                    <div class="explain_wind wind">
+                        <i class="move fas fa-wind fa-3x"></i>
+                        <div class="more_detail_wind" style="font-family: rixstraight-pro, sans-serif; font-size: 20px; font-weight: 500;">
+                            통풍중요
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="mainbox_detail__buy">
+                <div class="basket" style="font-family: hayanbaram,sans-serif; background-color: white; border: 1px solid rgb(236, 236, 236);">
+                    <div id="basket" class="sec_move" style="color: #81c147;">장바구니</div>
+                </div>
+                <div class="buying" style="font-family: hayanbaram,sans-serif; background-color: #81c147; border: none;">
+                    <div id="buying" class="sec_move" style="color: white;">구매하기</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/6478f529f2.js" crossorigin="anonymous">
+    </script>
+</body>
+</html>
+

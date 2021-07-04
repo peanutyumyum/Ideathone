@@ -1,0 +1,67 @@
+
+/*주로 위치 조정위해서 사용됨*/
+
+
+/*이미지*/
+.mainbox_img{
+    padding-top:130px;
+    padding-bottom: 0px;
+}
+
+/*식물이름부분 space는 이름 위치 조정위해서*/
+
+.mainbox_detail__name{
+    width: 300px;
+    display: flex;
+    padding-top: 50px;
+    width: 700px;
+    margin-bottom: 5px;
+}
+
+.space{
+    margin: 0px 10px;
+}
+
+
+/*식물 기르는 설명*/
+
+.mainbox_detail__explain{
+    margin-bottom: 5px;
+    border-radius: 5px;
+    margin:10px 0px 20px 0px
+}
+
+/*장바구니+ 구매*/
+
+.mainbox_detail__buy{
+    width: 700px;
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
+
+/* 온도, 물 등등 설명 위치 조정*/
+
+.more_detail_water{
+    position: relative;
+    top: 7px;
+    left: 120px;
+}
+.more_detail_sun{
+    position: relative;
+    top: 13px;
+    left: 120px;
+}
+.more_detail_cel{
+    position: relative;
+    top: 16px;
+    left: 140px;
+}
+.more_detail_wind{
+    position: relative;
+    top: 16px;
+    left: 140px;
+}
