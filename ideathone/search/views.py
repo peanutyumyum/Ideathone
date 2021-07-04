@@ -62,4 +62,4 @@ def detail(request, id):
     context = {
         'item' : item,
     }
-    return render(request, 'detail.html', context)
+    return render(request, 'ddetail.html', context)

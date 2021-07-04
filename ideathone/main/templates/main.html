@@ -59,18 +59,21 @@
         <p># 덩굴식물</p>
     </div>
 
-    <div class="fitSearchImgBox">
+    <div class="searchBox">
         {% if items.name == 'no_data' %}
-            <img id="no_data_img" src="{{items.image.url}}" width="1000">
+            <img id="no_data_img" src="{{items.image.url}}" style="width: 50px;">
         {% else %}
             {% for item in items %}
-                <a href="{% url 'search:detail' item.id %}"><img id="search_image" src="{{item.image.url}}"></a>
+            <div class="searchItem">
+                <a href="{% url 'search:detail' item.id %}"><img class="search_image" src="{{item.image.url}}"></a>
                 <br>
                 {{item.name}}
+            </div>
             {% endfor %}
         {% endif %}
-    </div> <!--- 임시 -->
+    </div>
     <!-- End Search -->
+
 
 
     <!-- Fit Search -->
@@ -81,12 +84,63 @@
     </div>
 
     <div class="fitSearchBox">
-        <div class="fitSearchItem">장소<div class="fitDropdown"><i class="bi bi-chevron-down"></i></div></div>
-        <div class="fitSearchItem">평수<div class="fitDropdown"><i class="bi bi-chevron-down"></i></div></div>
-        <div class="fitSearchItem">스타일<div class="fitDropdown"><i class="bi bi-chevron-down"></i></div></div>
-        <div class="fitSearchItem">컬러<div class="fitDropdown"><i class="bi bi-chevron-down"></i></div></div>
-        <div class="fitSearchItem">사이즈<div class="fitDropdown"><i class="bi bi-chevron-down"></i></div></div>
-        <div><i class="bi bi-search"></i></div>
+        <form id="fitSearchForm" action="{% url 'search:recommend_items' %}" method="GET">
+            {% csrf_token %}
+        <select class="fitSearchItem" id="place" name='place'>
+            <option value="">장소</option>
+            <option value="실내">실내</option>
+            <option value="실외">실외</option>
+        </select>    
+        <select class="fitSearchItem" id="place_size" name='place_size'>
+            <option value="">평수</option>
+            <option value="3평">3평</option>
+            <option value="4평">4평</option>
+            <option value="5평">5평</option>
+            <option value="6평">6평</option>
+            <option value="7평">7평</option>
+            <option value="8평">8평</option>
+            <option value="9평">9평</option>
+            <option value="10평">10평</option>
+            <option value="11평">11평</option>
+            <option value="12평">12평</option>
+            <option value="13평">13평</option>
+            <option value="14평">14평</option>
+            <option value="15평">15평</option>
+            <option value="16평">16평</option>
+            <option value="17평">17평</option>
+            <option value="18평">18평</option>
+            <option value="19평">19평</option>
+            <option value="20평">20평</option>
+            <option value="21평">21평</option>
+            <option value="22평">22평</option>
+        </select>    
+        <select class="fitSearchItem" id="style" name='style'>
+            <option value="">스타일</option>
+            <option value="밝은">밝은</option>
+            <option value="산뜻한">산뜻한</option>
+            <option value="어두운">어두운</option>
+            <option value="푸르른">푸르른</option>
+            <option value="청명한">청명한</option>
+            <option value="아늑한">아늑한</option>
+        </select>    
+        <select class="fitSearchItem" id="color" name='color'>
+            <option value="">선호색깔</option>
+            <option value="빨강">빨강</option>
+            <option value="초록">초록</option>
+            <option value="검정">검정</option>
+            <option value="회색">회색</option>
+            <option value="파랑">파랑</option>
+            <option value="하늘">하늘</option>
+        </select>    
+        <select class="fitSearchItem" id="size" name='size'>
+            <option value="">정원사이즈</option>
+            <option value="손바닥사이즈">손바닥사이즈</option>
+            <option value="A4용지사이즈">A4용지사이즈</option>
+            <option value="책상사이즈">책상사이즈</option>
+            <option value="소파사이즈">소파사이즈</option>
+        </select>    
+        <button type="submit" class="fitSearchBtn"><i class="bi bi-search"></i></button>
+        </form>
     </div>
 
     <div class="fitSearchImgBox">

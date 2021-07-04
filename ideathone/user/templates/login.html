@@ -1,36 +1,8 @@
-{% load static %}
-<head>
-	<meta charset="UTF-8">
-	<title>기르다 로그인</title>
-	<link rel="stylesheet" href="{% static 'style.css' %}">
-	<script src="https://kit.fontawesome.com/51db22a717.js" crossorigin="anonymous"></script>
-	<script>
-		(function(d) {
-		  var config = {
-			kitId: 'rlk0qqk',
-			scriptTimeout: 3000,
-			async: true
-		  },
-		  h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
-		})(document);
-	  </script>
-	  
-</head>
-<body>
-	<nav class="navbar">
-		<div class="navBox1">
-			<div class="navItem"><i class="bi bi-search"></i></div>
-			<div class="navItem" id="move1">검색</div>
-			<div class="navItem" id="move2">맞춤형 서비스</div>
-		</div>
-		<div class="navBox2"><img class="logo" src="{% static 'img/logo.png' %}"></div>
-		<div class="navBox3">
-			<div class="navItem"><i class="bi bi-cart3"></i></div>
-			<div class="navItem"><i class="bi bi-person-fill"></i></div>
-			<div class="navItem"><a href = "{% url 'user:login' %}">로그인</a></div>
-			<div class="navItem"><a href = "{% url 'user:signup' %}">회원가입</a></div>
-		</div>
-	</nav>
+{% extends 'loginbase.html' %}
+    {% block content %}
+	<div class="line">
+		<h2>로그인</h2>
+	</div>
 	<div class="main-container">
 		<div class="main-wrap">
 		<header>
@@ -38,14 +10,16 @@
 		<section class="login-input-section-wrap">
 			<form action="{% url 'user:login' %}" method="POST">
 				{% csrf_token %}
-				<div class="login-input-wrap">	
-          		<input placeholder="Username" type="text"></input>
+				<div class="login-input-wrap">
+					{{form.username}}	
+
         		</div>
-        		<div class="login-input-wrap password-wrap">	
-          		<input placeholder="Password" type="password"></input>
+        		<div class="login-input-wrap password-wrap">
+					{{form.password}}	
+
         		</div>
 				<div class="login-button-wrap">
-					<button type="submit">Sign in</button>
+					<button type="submit">로그인</button>
 				</div>
 			</form>
 			<div class="login-stay-sign-in">
@@ -60,4 +34,5 @@
 		</footer>
 		</div>
 	</div>
-</body>
+	</body>
+	{% endblock %}

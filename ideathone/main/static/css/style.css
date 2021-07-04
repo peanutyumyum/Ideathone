@@ -32,6 +32,7 @@
     float: right;
 
 }
+.aTag { text-decoration: none; color: black; }
 .navItem { padding: 3%; }
 .navItem:hover { border-bottom: 2px solid black; cursor:pointer; }
 
@@ -83,6 +84,22 @@
     left: -445px;
     cursor: pointer;
 }
+.searchBox {
+    width: 70%;
+    height: 600px;
+    background-color: white;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+.search_image {
+    width: 150px;
+}
+.searchItem {
+    margin: 2%;
+}
 .recommendBox {
     margin-top: 1%;
     margin-bottom: 3%;
@@ -107,21 +124,23 @@
     flex-direction: row;
     justify-content: center;
 }
+.fitSearchBox > form { width: 100%; }
 .fitSearchItem {
     border-radius: 20px;
     border: 1px solid green;
     width: 140px;
     height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     margin-left: 1%;
     margin-right: 1%;
+    padding-left: 7px;
 }
-.fitDropdown {
+.fitSearchBtn {
     cursor: pointer;
-    position: relative;
-    left: 38px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    width: 30px;
+    height: 27px;
 }
 .fitSearchImgBox {
     background-image: url('../img/fitimg.jpg');
